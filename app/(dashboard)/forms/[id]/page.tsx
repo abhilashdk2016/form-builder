@@ -13,7 +13,7 @@ import { format, formatDistance } from 'date-fns';
 import { Badge } from '@/components/ui/badge';
 import { Checkbox } from '@/components/ui/checkbox';
 
-const Form = async ({ params }: { params: { id: string }}) => {
+const Form = async ({ params }: { params: Promise<{ id: string }>}) => {
   const { id } = await params;
   const form = await GetFormById(Number(id));
   if(!form) {
